@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: hello
+spec:
+    template:
+        metadata:
+            labels:
+                app: hello
+        spec:
+            containers:
+            - name: hello
+              image: test/hello:latest
+              imagePullPolicy: IfNotPresent
+              ports:
+              - containerPort: 5000
